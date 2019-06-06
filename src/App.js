@@ -59,19 +59,21 @@ function App() {
             case "all":
                 return noSites + specificSite
             case "movie":
-                return "%2B(mkv|mp4|avi|mov|mpg|wmv)" + noSites + specificSite
+                return "%2B(mkv|mp4|avi|mov|mpg|wmv) filetype:(mkv|mp4|avi|mov|mpg|wmv)" + noSites + specificSite
             case "software":
                 return "%2B(exe|iso|tar|rar|zip|apk)" + noSites + specificSite
             case "music":
                 return "%2B(mp3|wav|ac3|ogg|flac|wma|m4a)" + noSites + specificSite
             case "image":
                 return "%2B(jpg|png|bmp|gif|tif|tiff|psd)" + noSites + specificSite
+            case "document":
+                return "%2B(pdf|xls|xlsx|ppt|pptx|doc|docx|odt|rtf)" + noSites + specificSite
         }
     }
 
     return (
         <div className="App">
-            <h1>Rold-Search</h1>
+            <h1>Felix-Search</h1>
             <br/>
             <form onSubmit={handleSearch}>
                 <input type="search" onChange={changeSearch} className="form-control" placeholder="Search" autoFocus
@@ -84,6 +86,8 @@ function App() {
                     <option value="software">Games and Software</option>
                     <option value="music">Music</option>
                     <option value="image">Images</option>
+                    <option value="document">Documents</option>
+                    <option value="font">Fonts</option>
                 </select>
                 <br/>
                 <select className="form-control" onChange={changeSite} data-show-content="true" required>

@@ -21,6 +21,7 @@ body {
     background-color: #333842;
     color: white;
     width: 400px;
+    max-width: 95vw;
     border-radius: .25rem;
 }
 
@@ -78,6 +79,7 @@ footer {
     position: absolute;
     bottom: 20px;
     width: 400px;
+    max-width: 95vw;
 }
 
 .link-footer {
