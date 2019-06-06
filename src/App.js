@@ -100,7 +100,7 @@ function App() {
             </form>
             <footer>
                 <a className="link-footer float-left" href="https://github.com/wetwer">Wetwer</a>
-                <span className="float-right dark-footer">06.06.2019</span>
+                <span data-toggle="tooltip" data-placement="top" title="Day Project" className="float-right dark-footer">06.06.2019</span>
             </footer>
         </div>
     );

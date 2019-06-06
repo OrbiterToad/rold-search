@@ -15,6 +15,13 @@ body {
     color: white;
 }
 
+@media only screen and (max-width: 600px) {
+    .container {
+        padding-top: 5vh;
+        justify-content: normal;
+    }
+}
+
 .form-control {
     font-size: 20px;
     border: none;
@@ -38,15 +45,6 @@ body {
 
 .App-link {
     color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .link-btn {
