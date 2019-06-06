@@ -4,7 +4,8 @@ import './App.css';
 function App() {
 
     const [search, setSearch] = useState("");
-    const [searchType, setSearchType] = useState("all");
+    const [searchType, setSearchType] = useState("default");
+    const [searchSite, setSearchSite] = useState("all");
 
     function changeSearch(event) {
         setSearch(event.target.value)
@@ -16,6 +17,11 @@ function App() {
         console.log(event.target.value)
     }
 
+    function changeSite(event) {
+        setSearchSite(event.target.value)
+        console.log(event.target.value)
+    }
+
     function handleSearch(event) {
         event.preventDefault()
         window.open("https://www.google.com/search?q=%22"
@@ -24,22 +30,39 @@ function App() {
 
     function searchParams() {
 
+        let specificSite = "";
+
+
+        switch (searchSite) {
+            case "all":
+                break;
+            case "drive":
+                specificSite = " site:drive.google.com/drive/folders/*"
+                break;
+            case "git":
+                specificSite = " site:github.com/*"
+                break;
+
+        }
+
+        console.log(specificSite)
+
         const noSites = "- inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)" +
             " intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)";
 
         switch (searchType) {
+            case "default":
+                return specificSite
             case "all":
-                return noSites
+                return noSites + specificSite
             case "movie":
-                return "%2B(mkv|mp4|avi|mov|mpg|wmv)" + noSites
+                return "%2B(mkv|mp4|avi|mov|mpg|wmv)" + noSites + specificSite
             case "software":
-                return "%2B(exe|iso|tar|rar|zip|apk)" + noSites
+                return "%2B(exe|iso|tar|rar|zip|apk)" + noSites + specificSite
             case "music":
-                return "%2B(mp3|wav|ac3|ogg|flac|wma|m4a)" + noSites
+                return "%2B(mp3|wav|ac3|ogg|flac|wma|m4a)" + noSites + specificSite
             case "image":
-                return "%2B(jpg|png|bmp|gif|tif|tiff|psd)" + noSites
-            case "code":
-                return "inurl:(github.com)"
+                return "%2B(jpg|png|bmp|gif|tif|tiff|psd)" + noSites + specificSite
         }
     }
 
@@ -48,15 +71,24 @@ function App() {
             <h1>Rold-Search</h1>
             <br/>
             <form onSubmit={handleSearch}>
-                <input type="search" onChange={changeSearch} className="form-control" placeholder="Search" autoFocus/>
+                <input type="search" onChange={changeSearch} className="form-control" placeholder="Search" autoFocus
+                       required/>
                 <br/>
-                <select className="form-control" onChange={changeType} data-show-content="true">
+                <select className="form-control" onChange={changeType} data-show-content="true" required>
+                    <option disabled>Type</option>
+                    <option value="default">Default</option>
                     <option value="all">All</option>
                     <option value="movie">Movie</option>
                     <option value="software">Games and Software</option>
                     <option value="music">Music</option>
                     <option value="image">Images</option>
-                    <option value="code">Code</option>
+                </select>
+                <br/>
+                <select className="form-control" onChange={changeSite} data-show-content="true" required>
+                    <option disabled>Site</option>
+                    <option value="all">All</option>
+                    <option value="drive">Google Drive</option>
+                    <option value="git">Github</option>
                 </select>
                 <br/>
                 <button className="btn link-btn btn-block" type="submit">Search</button>
