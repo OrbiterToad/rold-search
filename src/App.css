@@ -1,0 +1,93 @@
+.App {
+    text-align: center;
+}
+
+body {
+    background-color: #282c34;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.form-control {
+    font-size: 20px;
+    border: none;
+    background-color: #333842;
+    color: white;
+    width: 400px;
+    border-radius: .25rem;
+}
+
+.form-control:hover {
+    background-color: #3e4450;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #49505e;
+    color: white;
+    box-shadow: 0 0 0 0.4rem rgba(0, 123, 255, .25);
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.link-btn {
+    font-size: 20px;
+    border-radius: .25rem;
+    color: white;
+    background-color: #333842;
+}
+
+.link-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.link-btn button {
+    border: none !important;
+}
+
+.link-btn:hover {
+    color: white;
+    background-color: #49505e;
+    text-decoration: none;
+}
+
+.link-btn:focus {
+    box-shadow: 0 0 0 0.4rem rgba(0, 123, 255, .25);
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 400px;
+}
+
+.link-footer {
+    color: #545c6c;
+}
+
+.link-footer:hover {
+    color: #5f687a;
+}
+
+.dark-footer {
+    color: #545c6c;
+}
