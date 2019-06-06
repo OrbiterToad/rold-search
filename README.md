@@ -1,7 +1,7 @@
 # Rold-Search
 [![Netlify Status](https://api.netlify.com/api/v1/badges/74b3fbcf-b0f7-4eb8-a8c1-3df3ef29e56b/deploy-status)](https://app.netlify.com/sites/rold-search/deploys)
 
-Custom Google Search Engine exploiting <a href="">Google Search hacks</a>
+Custom Google Search Engine exploiting <a href="https://en.wikipedia.org/wiki/Google_hacking">Google Search hacks</a>
 
 <img src="https://i.imgur.com/1mvXxrw.png">
 

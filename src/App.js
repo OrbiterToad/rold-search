@@ -42,6 +42,9 @@ function App() {
             case "git":
                 specificSite = " site:github.com/*"
                 break;
+            case "mega":
+                specificSite = " site:mega.nz/*"
+                break;
 
         }
 
@@ -75,9 +78,8 @@ function App() {
                        required/>
                 <br/>
                 <select className="form-control" onChange={changeType} data-show-content="true" required>
-                    <option disabled>Type</option>
-                    <option value="default">Default</option>
-                    <option value="all">All</option>
+                    <option value="all" selected>All Types</option>
+                    <option value="default">Everything</option>
                     <option value="movie">Movie</option>
                     <option value="software">Games and Software</option>
                     <option value="music">Music</option>
@@ -85,10 +87,10 @@ function App() {
                 </select>
                 <br/>
                 <select className="form-control" onChange={changeSite} data-show-content="true" required>
-                    <option disabled>Site</option>
-                    <option value="all">All</option>
+                    <option value="all">All Sites</option>
                     <option value="drive">Google Drive</option>
                     <option value="git">Github</option>
+                    <option value="mega">MEGA</option>
                 </select>
                 <br/>
                 <button className="btn link-btn btn-block" type="submit">Search</button>
