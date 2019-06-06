@@ -73,7 +73,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Felix-Search</h1>
+            <h1>Rold-Search</h1>
             <br/>
             <form onSubmit={handleSearch}>
                 <input type="search" onChange={changeSearch} className="form-control" placeholder="Search" autoFocus
@@ -87,7 +87,6 @@ function App() {
                     <option value="music">Music</option>
                     <option value="image">Images</option>
                     <option value="document">Documents</option>
-                    <option value="font">Fonts</option>
                 </select>
                 <br/>
                 <select className="form-control" onChange={changeSite} data-show-content="true" required>
