@@ -45,7 +45,9 @@ function App() {
             case "mega":
                 specificSite = " site:mega.nz/*"
                 break;
-
+            default:
+                specificSite = ""
+                break;
         }
 
         console.log(specificSite)
@@ -67,6 +69,8 @@ function App() {
                 return "%2B(jpg|png|bmp|gif|tif|tiff|psd)" + noSites + specificSite
             case "document":
                 return "%2B(pdf|xls|xlsx|ppt|pptx|doc|docx|odt|rtf)" + noSites + specificSite
+            default:
+                return noSites + specificSite
         }
     }
 
