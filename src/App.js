@@ -50,8 +50,7 @@ function App() {
 
         console.log(specificSite)
 
-        const noSites = "- inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)" +
-            " intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)";
+        const noSites = " -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)";
 
         switch (searchType) {
             case "default":
